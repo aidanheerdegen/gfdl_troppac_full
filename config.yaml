@@ -1,0 +1,31 @@
+# PBS flags
+queue: normal
+project: x77
+walltime: 03:00:00
+ncpus: 1920
+mem: 3840GB
+jobname: TropFull
+
+#collate_walltime: 10:00:00
+#collate_mem: 16GB
+collate_walltime: 24:00:00
+collate_mem: 128GB
+collate_ncpus: 16
+collate_queue: express
+collate_flags: -n4 -z -m -r
+
+# Model config
+model: mom
+shortpath: /short/v45
+exe: fms_MOM_SIS.intel14.fpe0.O2.2017
+input:
+    - /short/v45/mxz565/mom/input/troppac_eraint/forced_mom025
+    - /short/v45/mxz565/mom/input/gfdl_nyf_1080_noCORE
+collate: true
+
+# Misc
+stacksize: unlimited
+
+qsub_flags: -lother=hyperthread
+
+runlog: true
