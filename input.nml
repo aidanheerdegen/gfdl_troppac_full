@@ -21,6 +21,11 @@
 
 /
 
+ &mpp_io_nml
+        deflate_level = 5
+        shuffle = 1
+/
+
  &diag_integral_nml
         file_name = 'diag_integral.out'
 	    time_units = 'days'
